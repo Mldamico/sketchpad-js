@@ -6,11 +6,9 @@ const randomNumber = () => {
 };
 
 const completeGrid = size => {
-  console.log(size);
   container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   for (let i = 0; i < size * size; i++) {
     const div = document.createElement("div");
-    div.classList = "square";
 
     container.appendChild(div);
     div.addEventListener("mouseover", e => {
@@ -19,8 +17,6 @@ const completeGrid = size => {
     });
   }
 };
-
-completeGrid(16);
 
 btn.addEventListener("click", e => {
   e.preventDefault();
@@ -34,3 +30,5 @@ function clearGrid() {
     container.removeChild(element);
   });
 }
+
+window.addEventListener("load", completeGrid(16));
